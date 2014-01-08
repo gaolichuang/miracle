@@ -1,0 +1,111 @@
+2014-01-08 11:09:05.931 15826 DEBUG miracle.common.service.service [-] Full set of CONF: _wait_for_exit_or_signal /usr/lib/python2.7/dist-packages/miracle/common/service/service.py:153
+2014-01-08 11:09:05.932 15826 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1928
+2014-01-08 11:09:05.932 15826 DEBUG miracle.common.service.service [-] Configuration options gathered from: log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1929
+2014-01-08 11:09:05.933 15826 DEBUG miracle.common.service.service [-] command line args: ['--config-file=miracle.conf', '--log-file=./log.txt'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1930
+2014-01-08 11:09:05.933 15826 DEBUG miracle.common.service.service [-] config files: ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1931
+2014-01-08 11:09:05.933 15826 DEBUG miracle.common.service.service [-] ================================================================================ log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1932
+2014-01-08 11:09:05.934 15826 DEBUG miracle.common.service.service [-] backdoor_port                  = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.934 15826 DEBUG miracle.common.service.service [-] config_dir                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.934 15826 DEBUG miracle.common.service.service [-] config_file                    = ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.935 15826 DEBUG miracle.common.service.service [-] debug                          = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.935 15826 DEBUG miracle.common.service.service [-] default_log_levels             = ['amqplib=WARN', 'sqlalchemy=WARN', 'boto=WARN', 'suds=INFO', 'keystone=INFO', 'eventlet.wsgi.server=WARN'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.935 15826 DEBUG miracle.common.service.service [-] domain_name                    = miracle log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.936 15826 DEBUG miracle.common.service.service [-] fatal_deprecations             = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.936 15826 DEBUG miracle.common.service.service [-] instance_format                = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.936 15826 DEBUG miracle.common.service.service [-] instance_uuid_format           = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.937 15826 DEBUG miracle.common.service.service [-] log_config                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.937 15826 DEBUG miracle.common.service.service [-] log_date_format                = %Y-%m-%d %H:%M:%S log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.937 15826 DEBUG miracle.common.service.service [-] log_dir                        = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.938 15826 DEBUG miracle.common.service.service [-] log_file                       = ./log.txt log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.938 15826 DEBUG miracle.common.service.service [-] log_format                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.938 15826 DEBUG miracle.common.service.service [-] logging_context_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user)s %(tenant)s] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.938 15826 DEBUG miracle.common.service.service [-] logging_debug_format_suffix    = %(funcName)s %(pathname)s:%(lineno)d log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.939 15826 DEBUG miracle.common.service.service [-] logging_default_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.939 15826 DEBUG miracle.common.service.service [-] logging_exception_prefix       = %(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.939 15826 DEBUG miracle.common.service.service [-] max_queue_size                 = 100 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.940 15826 DEBUG miracle.common.service.service [-] periodic_enable                = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.940 15826 DEBUG miracle.common.service.service [-] periodic_fuzzy_delay           = 2 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.940 15826 DEBUG miracle.common.service.service [-] periodic_report_tasks_interval = 60 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.941 15826 DEBUG miracle.common.service.service [-] publish_errors                 = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.941 15826 DEBUG miracle.common.service.service [-] report_interval                = 10 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.941 15826 DEBUG miracle.common.service.service [-] run_external_periodic_tasks    = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.941 15826 DEBUG miracle.common.service.service [-] syslog_log_facility            = LOG_USER log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.942 15826 DEBUG miracle.common.service.service [-] use_stderr                     = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.942 15826 DEBUG miracle.common.service.service [-] use_syslog                     = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.942 15826 DEBUG miracle.common.service.service [-] verbose                        = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:05.943 15826 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1951
+2014-01-08 11:09:28.949 15826 INFO miracle.common.service.service [-] Caught SIGINT, exiting
+2014-01-08 11:09:47.785 16092 DEBUG miracle.common.service.service [-] Full set of CONF: _wait_for_exit_or_signal /usr/lib/python2.7/dist-packages/miracle/common/service/service.py:153
+2014-01-08 11:09:47.786 16092 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1928
+2014-01-08 11:09:47.786 16092 DEBUG miracle.common.service.service [-] Configuration options gathered from: log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1929
+2014-01-08 11:09:47.787 16092 DEBUG miracle.common.service.service [-] command line args: ['--config-file=miracle.conf', '--log-file=./log.txt'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1930
+2014-01-08 11:09:47.787 16092 DEBUG miracle.common.service.service [-] config files: ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1931
+2014-01-08 11:09:47.787 16092 DEBUG miracle.common.service.service [-] ================================================================================ log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1932
+2014-01-08 11:09:47.788 16092 DEBUG miracle.common.service.service [-] backdoor_port                  = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.788 16092 DEBUG miracle.common.service.service [-] config_dir                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.788 16092 DEBUG miracle.common.service.service [-] config_file                    = ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.789 16092 DEBUG miracle.common.service.service [-] debug                          = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.789 16092 DEBUG miracle.common.service.service [-] default_log_levels             = ['amqplib=WARN', 'sqlalchemy=WARN', 'boto=WARN', 'suds=INFO', 'keystone=INFO', 'eventlet.wsgi.server=WARN'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.789 16092 DEBUG miracle.common.service.service [-] domain_name                    = miracle log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.790 16092 DEBUG miracle.common.service.service [-] fatal_deprecations             = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.790 16092 DEBUG miracle.common.service.service [-] instance_format                = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.790 16092 DEBUG miracle.common.service.service [-] instance_uuid_format           = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.791 16092 DEBUG miracle.common.service.service [-] log_config                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.791 16092 DEBUG miracle.common.service.service [-] log_date_format                = %Y-%m-%d %H:%M:%S log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.792 16092 DEBUG miracle.common.service.service [-] log_dir                        = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.792 16092 DEBUG miracle.common.service.service [-] log_file                       = ./log.txt log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.792 16092 DEBUG miracle.common.service.service [-] log_format                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.792 16092 DEBUG miracle.common.service.service [-] logging_context_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user)s %(tenant)s] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.793 16092 DEBUG miracle.common.service.service [-] logging_debug_format_suffix    = %(funcName)s %(pathname)s:%(lineno)d log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.793 16092 DEBUG miracle.common.service.service [-] logging_default_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.794 16092 DEBUG miracle.common.service.service [-] logging_exception_prefix       = %(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.794 16092 DEBUG miracle.common.service.service [-] max_queue_size                 = 100 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.794 16092 DEBUG miracle.common.service.service [-] periodic_enable                = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.795 16092 DEBUG miracle.common.service.service [-] periodic_fuzzy_delay           = 2 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.795 16092 DEBUG miracle.common.service.service [-] periodic_report_tasks_interval = 60 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.795 16092 DEBUG miracle.common.service.service [-] publish_errors                 = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.795 16092 DEBUG miracle.common.service.service [-] report_interval                = 10 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.796 16092 DEBUG miracle.common.service.service [-] run_external_periodic_tasks    = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.796 16092 DEBUG miracle.common.service.service [-] syslog_log_facility            = LOG_USER log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.796 16092 DEBUG miracle.common.service.service [-] use_stderr                     = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.797 16092 DEBUG miracle.common.service.service [-] use_syslog                     = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.797 16092 DEBUG miracle.common.service.service [-] verbose                        = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:09:47.797 16092 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1951
+2014-01-08 11:10:04.169 16092 INFO miracle.common.service.service [-] Caught SIGINT, exiting
+2014-01-08 11:10:45.203 16512 DEBUG miracle.common.service.service [-] Full set of CONF: _wait_for_exit_or_signal /usr/lib/python2.7/dist-packages/miracle/common/service/service.py:153
+2014-01-08 11:10:45.204 16512 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1928
+2014-01-08 11:10:45.204 16512 DEBUG miracle.common.service.service [-] Configuration options gathered from: log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1929
+2014-01-08 11:10:45.205 16512 DEBUG miracle.common.service.service [-] command line args: ['--config-file=miracle.conf', '--log-file=./log.txt'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1930
+2014-01-08 11:10:45.205 16512 DEBUG miracle.common.service.service [-] config files: ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1931
+2014-01-08 11:10:45.205 16512 DEBUG miracle.common.service.service [-] ================================================================================ log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1932
+2014-01-08 11:10:45.206 16512 DEBUG miracle.common.service.service [-] backdoor_port                  = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.206 16512 DEBUG miracle.common.service.service [-] config_dir                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.206 16512 DEBUG miracle.common.service.service [-] config_file                    = ['miracle.conf'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.207 16512 DEBUG miracle.common.service.service [-] debug                          = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.207 16512 DEBUG miracle.common.service.service [-] default_log_levels             = ['amqplib=WARN', 'sqlalchemy=WARN', 'boto=WARN', 'suds=INFO', 'keystone=INFO', 'eventlet.wsgi.server=WARN'] log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.207 16512 DEBUG miracle.common.service.service [-] domain_name                    = miracle log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.208 16512 DEBUG miracle.common.service.service [-] fatal_deprecations             = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.208 16512 DEBUG miracle.common.service.service [-] instance_format                = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.208 16512 DEBUG miracle.common.service.service [-] instance_uuid_format           = [instance: %(uuid)s]  log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.209 16512 DEBUG miracle.common.service.service [-] log_config                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.209 16512 DEBUG miracle.common.service.service [-] log_date_format                = %Y-%m-%d %H:%M:%S log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.209 16512 DEBUG miracle.common.service.service [-] log_dir                        = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.210 16512 DEBUG miracle.common.service.service [-] log_file                       = ./log.txt log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.210 16512 DEBUG miracle.common.service.service [-] log_format                     = None log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.210 16512 DEBUG miracle.common.service.service [-] logging_context_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user)s %(tenant)s] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.210 16512 DEBUG miracle.common.service.service [-] logging_debug_format_suffix    = %(funcName)s %(pathname)s:%(lineno)d log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.211 16512 DEBUG miracle.common.service.service [-] logging_default_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.211 16512 DEBUG miracle.common.service.service [-] logging_exception_prefix       = %(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.212 16512 DEBUG miracle.common.service.service [-] max_queue_size                 = 100 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.212 16512 DEBUG miracle.common.service.service [-] periodic_enable                = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.212 16512 DEBUG miracle.common.service.service [-] periodic_fuzzy_delay           = 2 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.212 16512 DEBUG miracle.common.service.service [-] periodic_report_tasks_interval = 60 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.213 16512 DEBUG miracle.common.service.service [-] publish_errors                 = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.213 16512 DEBUG miracle.common.service.service [-] report_interval                = 10 log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.213 16512 DEBUG miracle.common.service.service [-] run_external_periodic_tasks    = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.214 16512 DEBUG miracle.common.service.service [-] syslog_log_facility            = LOG_USER log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.214 16512 DEBUG miracle.common.service.service [-] use_stderr                     = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.214 16512 DEBUG miracle.common.service.service [-] use_syslog                     = False log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.215 16512 DEBUG miracle.common.service.service [-] verbose                        = True log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1941
+2014-01-08 11:10:45.215 16512 DEBUG miracle.common.service.service [-] ******************************************************************************** log_opt_values /usr/lib/python2.7/dist-packages/oslo/config/cfg.py:1951
+2014-01-08 11:13:27.979 16512 INFO miracle.common.service.service [-] Caught SIGINT, exiting
