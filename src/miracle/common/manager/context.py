@@ -22,9 +22,9 @@ TODO: now context only have uuid, you can add globale info in futrue
 from miracle.common.utils import uuidutils
 
 def generate_id():
-    return 'manager-%s' % uuidutils.generate_uuid()
+    return 'service-%s' % uuidutils.generate_uuid()
 
-class ManagerContext(object):
+class ServiceContext(object):
 
     """Helper class to represent useful information about a manager context.
 
@@ -35,15 +35,16 @@ class ManagerContext(object):
     def __init__(self, m_id=None):
 
         if not m_id:
-            m_id = generate_id()
-        self.m_id = m_id
+            s_id = generate_id()
+        self.s_id = m_id
+        self.tg = None
 
     def to_dict(self):
-        return {'m_id': self.m_id}
+        return {'s_id': self.s_id}
     @property
-    def manager_id(self):
-        return self.m_id
+    def service_id(self):
+        return self.s_id
 
-def get_manager_context(show_deleted=False):
-    context = ManagerContext(None)
+def get_service_context(show_deleted=False):
+    context = ServiceContext(None)
     return context

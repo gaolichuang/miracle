@@ -128,8 +128,7 @@ class DynamicLoopingCall(LoopingCallBase):
 
                     if periodic_interval_max is not None:
                         idle = min(idle, periodic_interval_max)
-                    LOG.debug(_('Dynamic looping call sleeping for %.02f '
-                                'seconds'), idle)
+                    LOG.debug(_('Dynamic looping call sleeping for %.02f seconds'), idle)
                     greenthread.sleep(idle)
             except LoopingCallDone as e:
                 self.stop()

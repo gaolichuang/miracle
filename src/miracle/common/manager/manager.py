@@ -7,6 +7,7 @@ from oslo.config import cfg
 from eventlet import greenthread
 from miracle.common.manager import periodic_task
 from miracle.common.base import log as logging
+from miracle.common.utils import uuidutils
 
 CONF = cfg.CONF
 CONF.import_opt('periodic_report_tasks_interval', 'miracle.common.service.service')
@@ -20,8 +21,11 @@ class Manager(periodic_task.PeriodicTasks):
     Manager contain the same context
     '''
     def __init__(self):
-        pass
+        self.m_id = '%s-%s'%('manager',uuidutils.generate_uuid())
 
+    @property
+    def manager_id(self):
+        return self.m_id
     def periodic_report_tasks(self, service, raise_on_error=False):
         '''fix interval task, you can rewrite run_periodic_report_tasks fuction'''
         try:

@@ -28,7 +28,7 @@ class SimpleServer(service.Service):
         self.periodic_fuzzy_delay = periodic_fuzzy_delay
         self.periodic_interval_max = periodic_interval_max
         self.saved_args, self.saved_kwargs = args, kwargs
-        self.context = context.get_manager_context()
+        self.context = context.get_service_context()
     @classmethod
     def create(cls, manager, report_interval=None, periodic_enable=None,
                periodic_fuzzy_delay=None, periodic_interval_max=None):
