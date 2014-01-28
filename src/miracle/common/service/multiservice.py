@@ -1,7 +1,8 @@
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
 import random
-import Queue
+from eventlet import queue
+
 #http://blog.csdn.net/yatere/article/details/6668006
 from oslo.config import cfg
 
@@ -9,6 +10,10 @@ from miracle.common.utils import importutils
 from miracle.common.manager import context
 from miracle.common.service import service
 from miracle.common.manager import managercontainer
+
+from miracle.common.utils.gettextutils import _  # noqa
+from miracle.common.base import log as logging
+
 
 muitlservice_opts = [
     cfg.IntOpt('max_queue_size',
@@ -23,6 +28,16 @@ CONF.import_opt('report_interval', 'miracle.common.service.service')
 CONF.import_opt('periodic_enable', 'miracle.common.service.service')
 CONF.import_opt('periodic_fuzzy_delay', 'miracle.common.service.service')
 
+from cccrawler.manager import manager as crawler_manager
+
+LOG = logging.getLogger(__name__)
+'''
+Sample:
+server = multiservice.MultiServer.create(
+           managers = ['cccrawler.scheduler.manager.DummySchedulerManager',
+                       'cccrawler.fetcher.managercontainer.FetcherManagerContainer',
+                       ('cccrawler.handler.manager.DummyHandlerManager',2)])   # this line means there is 2 DummyHandlerManager
+'''
 class MultiServer(service.Service):
     ''' simple server, add manager.Run to thread and maintain period task in manager'''
     def __init__(self, managers, report_interval=None,
@@ -31,13 +46,24 @@ class MultiServer(service.Service):
         super(MultiServer, self).__init__()
         self.managers_class_name = managers
         self.containers = []
+        LOG.info(_("=====================Start ManagerContainers ===================="))
         for manager_class_name in self.managers_class_name:
-            manager_class = importutils.import_class(manager_class_name)
-            if isinstance(manager_class, managercontainer.ManagerContainer):
-                self.containers.append(manager_class)
+            if isinstance(manager_class_name, tuple):
+                manager_class = importutils.import_class(manager_class_name[0])
+                manager_class_number = manager_class_name[1]
+                LOG.info(_("Start Multi %s  number %s"%(manager_class,manager_class_number)))
             else:
-                container = managercontainer.ManagerContainer(manager = manager_class(*args, **kwargs))
+                manager_class = importutils.import_class(manager_class_name)
+                manager_class_number = 1
+            if issubclass(manager_class, managercontainer.ManagerContainer):
+                manager_or_container = manager_class()
+                self.containers.append(manager_or_container)
+                LOG.info(_("Start ManagerContainer: %(mname)s"), {'mname':manager_or_container.m_name})
+            else:
+                container = managercontainer.ManagerContainer(manager = manager_class,
+                                                              number = manager_class_number)
                 self.containers.append(container)
+        LOG.info(_(60*"="))
         self.report_interval = report_interval
         self.periodic_enable = periodic_enable
         self.periodic_fuzzy_delay = periodic_fuzzy_delay
@@ -45,6 +71,28 @@ class MultiServer(service.Service):
         self.saved_args, self.saved_kwargs = args, kwargs
         self.context = context.get_service_context()
         self.context.tg = self.tg
+        self.context.periodic_enable = self.periodic_enable
+        self.context.report_interval = self.report_interval
+        self.context.periodic_fuzzy_delay = self.periodic_fuzzy_delay
+        self.context.periodic_interval_max = self.periodic_interval_max
+        LOG.info(_("========================Managers chain================="))
+        idx = 0
+        while idx < len(self.containers):
+            LOG.info(_("Chain %(index)s  Manager: %(mname)s"),
+                            {'index':idx,'mname':self.containers[idx].m_name})
+            idx += 1
+        LOG.info(_(60*"="))
+
+        length = len(self.containers)
+        if length == 0:
+            raise
+        i = 1
+        while i < length:
+            '''connect all manager containers, containers hand in hand'''
+            _queue = queue.LightQueue(CONF.max_queue_size)
+            self.containers[i-1].output_queue = _queue
+            self.containers[i].input_queue = _queue
+            i += 1
 
     @classmethod
     def create(cls, managers, report_interval=None, periodic_enable=None,
@@ -71,25 +119,21 @@ class MultiServer(service.Service):
         return service_obj
 
     def start(self):
-        length = len(self.containers)
-        if length == 0:
-            raise
-        i = 1
-        while i < length:
-            '''connect all manager containers, containers hand in hand'''
-            queue = Queue.Queue(CONF.max_queue_size)
-            self.containers[i-1].output_queue = queue
-            self.containers[i].input_queue = queue
-            i += 1
-            
+        LOG.info(_("Begin to loop container.pre_start_hook"))
         for container in self.containers:
+            LOG.info(_("%(cname)s Pre_start_hook"),{'cname':container.m_name})
             container.pre_start_hook(self.context)
+        LOG.info(_("End to loop container.pre_start_hook"))
+
         for container in self.containers:
             '''start container thread Run'''
             self.tg.add_thread(container.Run, self.context, self.saved_args, self.saved_kwargs)
-        
+
+        LOG.info(_("Begin to loop container.post_start_hook"))
         for container in self.containers:
+            LOG.info(_("%(cname)s Post_start_hook"),{'cname':container.m_name})
             container.post_start_hook(self.context)
+        LOG.info(_("End to loop container.post_start_hook"))
 
         if self.periodic_enable:
             if self.periodic_fuzzy_delay:

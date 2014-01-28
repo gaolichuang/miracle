@@ -1,0 +1,45 @@
+2014-01-27 14:57:32.440 5296 ERROR miracle.common.db.sqlalchemy.session [-] DB exception wrapped.
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session Traceback (most recent call last):
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/lib/python2.7/dist-packages/miracle/common/db/sqlalchemy/session.py", line 506, in _wrap
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     return f(*args, **kwargs)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/lib/python2.7/dist-packages/miracle/common/db/sqlalchemy/session.py", line 700, in flush
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     return super(Session, self).flush(*args, **kwargs)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 1734, in flush
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     self._flush(objects)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/session.py", line 1805, in _flush
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     flush_context.execute()
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py", line 331, in execute
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     rec.execute(self)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/unitofwork.py", line 475, in execute
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     uow
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/persistence.py", line 64, in save_obj
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     table, insert)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/orm/persistence.py", line 558, in _emit_insert_statements
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     execute(statement, params)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1449, in execute
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     params)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1584, in _execute_clauseelement
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     compiled_sql, distilled_params
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1698, in _execute_context
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     context)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1691, in _execute_context
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     context)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 331, in do_execute
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session     cursor.execute(statement, parameters)
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session ProgrammingError: (ProgrammingError) You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings. u'INSERT INTO user (updated_at, deleted_at, deleted, name, name1, sex, age, schoolid, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' (None, None, 0, 'alexa', '\xe6\x88\x91\xe4\xbb\xac', 'man', 20, None, '2014-01-27 06:57:32.438575')
+2014-01-27 14:57:32.440 5296 TRACE miracle.common.db.sqlalchemy.session 
+2014-01-27 14:57:32.452 5296 CRITICAL miracle [-] (ProgrammingError) You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings. u'INSERT INTO user (updated_at, deleted_at, deleted, name, name1, sex, age, schoolid, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' (None, None, 0, 'alexa', '\xe6\x88\x91\xe4\xbb\xac', 'man', 20, None, '2014-01-27 06:57:32.438575')
+2014-01-27 14:57:32.452 5296 TRACE miracle Traceback (most recent call last):
+2014-01-27 14:57:32.452 5296 TRACE miracle   File "db_tests.py", line 38, in <module>
+2014-01-27 14:57:32.452 5296 TRACE miracle     main()
+2014-01-27 14:57:32.452 5296 TRACE miracle   File "db_tests.py", line 32, in main
+2014-01-27 14:57:32.452 5296 TRACE miracle     db_api.user_insert(values)
+2014-01-27 14:57:32.452 5296 TRACE miracle   File "/usr/lib/python2.7/dist-packages/miracle/tests/common/db/api.py", line 30, in user_insert
+2014-01-27 14:57:32.452 5296 TRACE miracle     status_ref.save()
+2014-01-27 14:57:32.452 5296 TRACE miracle   File "/usr/lib/python2.7/dist-packages/miracle/common/db/sqlalchemy/models.py", line 52, in save
+2014-01-27 14:57:32.452 5296 TRACE miracle     session.flush()
+2014-01-27 14:57:32.452 5296 TRACE miracle   File "/usr/lib/python2.7/dist-packages/miracle/common/db/sqlalchemy/session.py", line 527, in _wrap
+2014-01-27 14:57:32.452 5296 TRACE miracle     raise exception.DBError(e)
+2014-01-27 14:57:32.452 5296 TRACE miracle DBError: (ProgrammingError) You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings. u'INSERT INTO user (updated_at, deleted_at, deleted, name, name1, sex, age, schoolid, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' (None, None, 0, 'alexa', '\xe6\x88\x91\xe4\xbb\xac', 'man', 20, None, '2014-01-27 06:57:32.438575')
+2014-01-27 14:57:32.452 5296 TRACE miracle 
+我们

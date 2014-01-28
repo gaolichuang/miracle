@@ -38,6 +38,10 @@ class ServiceContext(object):
             s_id = generate_id()
         self.s_id = m_id
         self.tg = None
+        self.report_interval = 10
+        self.periodic_enable = False
+        self.periodic_fuzzy_delay = 10
+        self.periodic_interval_max = 20
 
     def to_dict(self):
         return {'s_id': self.s_id}

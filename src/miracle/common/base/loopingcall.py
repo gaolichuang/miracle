@@ -25,6 +25,7 @@ from eventlet import greenthread
 from miracle.common.utils.gettextutils import _
 from miracle.common.base import log as logging
 from miracle.common.utils import timeutils
+from miracle.common.utils import inspectutils
 
 LOG = logging.getLogger(__name__)
 
@@ -128,7 +129,9 @@ class DynamicLoopingCall(LoopingCallBase):
 
                     if periodic_interval_max is not None:
                         idle = min(idle, periodic_interval_max)
-                    LOG.debug(_('Dynamic looping call sleeping for %.02f seconds'), idle)
+                    LOG.debug(_('Dynamic looping call sleeping for %.02f seconds at %s  Name: %s'
+                                    % (idle,inspectutils.fuction_full_name(self.f),
+                                        inspectutils.fuction_class(self.f).m_name)))
                     greenthread.sleep(idle)
             except LoopingCallDone as e:
                 self.stop()

@@ -19,12 +19,10 @@
 
 from oslo.config import cfg
 
-#from ccwsgi.common.db.sqlalchemy import session as db_session
+from miracle.common import db
 #from nova.openstack.common import rpc
 #from nova import paths
 #from nova import version
-
-#_DEFAULT_SQL_CONNECTION = 'sqlite:///' + paths.state_path_def('$sqlite_db')
 
 #import pbr.version
 
@@ -32,11 +30,12 @@ from oslo.config import cfg
 #version_string = version_info.version_string
 
 def parse_args(argv, default_config_files=None):
-#    db_session.set_defaults(sql_connection=_DEFAULT_SQL_CONNECTION,
-#                            sqlite_db='nova.sqlite')
+    db.set_default_session()
 #    rpc.set_defaults(control_exchange='nova')
     cfg.CONF(argv[1:],
-             project='ccwsgi',
+             project='miracle',
              version='1.0',
              #version=version_string(),
              default_config_files=default_config_files)
+    # init_db should behind cfg.CONF, because it user CONF.db_module_name to create db
+    db.init_db()
