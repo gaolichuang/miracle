@@ -29,6 +29,10 @@ def main():
     ret = db_api.user_get_all()
     print ret
 
+    print 'get all name'
+    ret = db_api.user_get_all_name()
+    print ret
+
     values = {'id':17}
     print 'get value id %s'% values['id']
     db_api.user_get_filter_dict(values)

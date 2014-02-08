@@ -30,7 +30,11 @@ def user_get_all():
     session = db_session.get_session()
     ret = session.query(models.User).all()
     return ret
-
+def user_get_all_name():
+    session = db_session.get_session()
+    with session.begin():
+        ret = session.execute('select name from user').fetchall()                                                                   
+    return ret 
 def user_get_filter_dict(filter_dict):
     sa = db_session.get_session()
     users =  sa.query(models.User).filter_by(**filter_dict).all()
