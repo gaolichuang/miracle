@@ -22,6 +22,7 @@ class Manager(periodic_task.PeriodicTasks):
     '''
     def __init__(self):
         self.m_id = '%s-%s'%('manager',uuidutils.generate_uuid())
+        self.m_name = self.m_id
 
     @property
     def manager_id(self):
